@@ -2,16 +2,18 @@
 
 This repository contains a collection of Python practice problems, primarily intended for students taking CMSC 14100 and CMSC 14200 at the University of Chicago.
 
-| Category            | Be-a-Computer                                           | Short Exercises                                             | Advent of Code                                            |
-|---------------------|---------------------------------------------------------|-------------------------------------------------------------|-----------------------------------------------------------|
-| Loops               | [Be-a-Computer](problems/loops/be-a-computer.md)        | [Short Exercises](problems/loops/short-exercises.md)        | [Advent of Code](problems/loops/advent-of-code.md)        |
-| Sets                | [Be-a-Computer](problems/sets/be-a-computer.md)         | [Short Exercises](problems/sets/short-exercises.md)         | [Advent of Code](problems/sets/advent-of-code.md)         |
-| Dictionaries        | [Be-a-Computer](problems/dictionaries/be-a-computer.md) | [Short Exercises](problems/dictionaries/short-exercises.md) | [Advent of Code](problems/dictionaries/advent-of-code.md) |
-| Classes and Objects | [Be-a-Computer](problems/oo/be-a-computer.md)           | [Short Exercises](problems/oo/short-exercises.md)           | [Advent of Code](problems/oo/advent-of-code.md)           |
-| Recursion           | [Be-a-Computer](problems/recursion/be-a-computer.md)    | [Short Exercises](problems/recursion/short-exercises.md)    | [Advent of Code](problems/recursion/advent-of-code.md)    |
-| Trees               | [Be-a-Computer](problems/trees/be-a-computer.md)        | [Short Exercises](problems/trees/short-exercises.md)        | [Advent of Code](problems/trees/advent-of-code.md)        |
-| Graphs              | [Be-a-Computer](problems/graphs/be-a-computer.md)       | [Short Exercises](problems/graphs/short-exercises.md)       | [Advent of Code](problems/graphs/advent-of-code.md)       |
-| Challenge Problems  | [Be-a-Computer](problems/challenge/be-a-computer.md)    | [Short Exercises](problems/challenge/short-exercises.md)    | [Advent of Code](problems/challenge/advent-of-code.md)    |
+| Category               | Be-a-Computer                                                     | Short Exercises                                                       | Advent of Code                                                      |
+|------------------------|-------------------------------------------------------------------|-----------------------------------------------------------------------|---------------------------------------------------------------------|
+| Programming Basics     | [Be-a-Computer](problems/basics/be-a-computer.md)                 | [Short Exercises](problems/basics/short-exercises.md)                 | [Advent of Code](problems/basics/advent-of-code.md)                 |
+| Lists                  | [Be-a-Computer](problems/lists/be-a-computer.md)                  | [Short Exercises](problems/lists/short-exercises.md)                  | [Advent of Code](problems/lists/advent-of-code.md)                  |
+| Sets                   | [Be-a-Computer](problems/sets/be-a-computer.md)                   | [Short Exercises](problems/sets/short-exercises.md)                   | [Advent of Code](problems/sets/advent-of-code.md)                   |
+| Dictionaries           | [Be-a-Computer](problems/dictionaries/be-a-computer.md)           | [Short Exercises](problems/dictionaries/short-exercises.md)           | [Advent of Code](problems/dictionaries/advent-of-code.md)           |
+| Classes and Objects    | [Be-a-Computer](problems/oo/be-a-computer.md)                     | [Short Exercises](problems/oo/short-exercises.md)                     | [Advent of Code](problems/oo/advent-of-code.md)                     |
+| Functional Programming | [Be-a-Computer](problems/functional-programming/be-a-computer.md) | [Short Exercises](problems/functional-programming/short-exercises.md) | [Advent of Code](problems/functional-programming/advent-of-code.md) |
+| Recursion              | [Be-a-Computer](problems/recursion/be-a-computer.md)              | [Short Exercises](problems/recursion/short-exercises.md)              | [Advent of Code](problems/recursion/advent-of-code.md)              |
+| Trees                  | [Be-a-Computer](problems/trees/be-a-computer.md)                  | [Short Exercises](problems/trees/short-exercises.md)                  | [Advent of Code](problems/trees/advent-of-code.md)                  |
+| Graphs                 | [Be-a-Computer](problems/graphs/be-a-computer.md)                 | [Short Exercises](problems/graphs/short-exercises.md)                 | [Advent of Code](problems/graphs/advent-of-code.md)                 |
+| Challenge Problems     | [Be-a-Computer](problems/challenge/be-a-computer.md)              | [Short Exercises](problems/challenge/short-exercises.md)              | [Advent of Code](problems/challenge/advent-of-code.md)              |
 
 Each category targets a topic covered somewhere in CMSC 14100 or CMSC 14200, except the "Challenge Problems" category, which target general problem-solving skills (including selecting the right data structure to solve the problem)
 
