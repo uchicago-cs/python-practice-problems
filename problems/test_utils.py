@@ -53,3 +53,32 @@ def check_list_unmodified(param_name, before, after, recreate_msg=None):
         msg += "\n" + recreate_msg
 
     assert before == after, msg
+
+
+# Utils ported over from the NumPy problems
+import numpy as np
+
+def check_is_ndarray(actual, recreate_msg=None):
+    check_type(actual, np.zeros(1), recreate_msg)
+
+def check_dtype(array, expected, recreate_msg=None):
+    actual_dtype = array.dtype
+    expected_dtype = expected
+
+    msg = "The function returned an array of the wrong dtype.\n"
+    msg += "  Expected return dtype: {}.\n".format(expected_dtype)
+    msg += "  Actual return dtype: {}.".format(actual_dtype)
+    if recreate_msg is not None:
+        msg += "\n" + recreate_msg
+
+    assert actual_dtype == expected_dtype, msg
+
+def check_array_equal(actual, expected, recreate_msg):
+    msg = "The function returned the wrong array"
+    msg += " Expected array: {}\n".format(expected)
+    msg += " Actual returned array: {}\n".format(actual)
+
+    if recreate_msg is not None:
+        msg += "\n" + recreate_msg
+    
+    np.testing.assert_allclose(actual, expected, err_msg = msg, verbose=False)
