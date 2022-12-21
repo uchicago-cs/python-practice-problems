@@ -4,7 +4,7 @@ def num_divisible(lb, ub, p, q):
     or divisible by q, but not divisible by both p and q.
     """
 
-    ### EXERCISE 4 -- YOUR CODE GOES HERE
+    ### YOUR CODE GOES HERE
     # Replace the following line with your code.
     # After running your code, variable n should contain the value
     # we ask you to compute in this exercise.

@@ -4,7 +4,7 @@ def number_string(x):
     (depending on whether the number is positive, negative, or zero)
     """
 
-    ### EXERCISE 3 -- YOUR CODE GOES HERE
+    ### YOUR CODE GOES HERE
     # Replace the following line with your code.
     # After running your code, variable s should contain the value
     # we ask you to compute in this exercise.
