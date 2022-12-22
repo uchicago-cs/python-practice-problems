@@ -22,6 +22,9 @@ def prune_tree(tree, keys_to_prune):
 #############################################################
 
 import sys
+import pytest
+import util
+from tree import Tree
 sys.path.append('../')
 
 import test_utils as utils
@@ -103,3 +106,17 @@ def test_prune_tree_19(trees_prune_tree):
 def test_prune_tree_20(trees_prune_tree):
     do_test_prune_tree(trees_prune_tree, "tree_20", 
         {'V12', 'V42', 'V46', 'V7', 'V30', 'V29', 'V60', 'V17', 'V36'})
+
+@pytest.fixture(scope="session")
+def trees_prune_tree():
+    """
+    Fixture for loading the trees for prune_tree
+    """
+    trees, original_trees = get_trees()
+    expected_trees = util.load_trees("sample_trees_pruned.json")
+    return trees, original_trees, expected_trees
+
+def get_trees():
+    trees = util.load_trees("sample_trees.json")
+    original_trees = util.load_trees("sample_trees.json")
+    return trees, original_trees

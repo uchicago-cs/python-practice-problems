@@ -101,6 +101,10 @@ from tree import Tree
 def pretty_print_repr(x):
     return repr(x)
 
+def check_tree_equals(t, expected_t, recreate_msg):
+    check_tree_helper(t, expected_t, 
+        "Actual and expected values do not match:", recreate_msg)
+
 def gen_recreate_msg_with_trees(function, tree_name, *params):
     params_str = "".join([", " + pretty_print_repr(p) for p in params])
     lines = ['import util',
