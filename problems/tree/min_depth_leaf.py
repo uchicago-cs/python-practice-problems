@@ -19,6 +19,9 @@ def min_depth_leaf(tree):
 #############################################################
 
 import sys
+from tree import Tree
+import pytest
+import util
 sys.path.append('../')
 
 import test_utils as utils
@@ -93,3 +96,15 @@ def test_min_depth_leaf_19(trees_min_depth_leaf):
 
 def test_min_depth_leaf_20(trees_min_depth_leaf):
     do_test_min_depth_leaf(trees_min_depth_leaf, "tree_20", 2)
+
+@pytest.fixture(scope="session")
+def trees_min_depth_leaf():
+    """
+    Fixture for loading the trees for min_depth_leaf
+    """
+    return get_trees()
+
+def get_trees():
+    trees = util.load_trees("sample_trees.json")
+    original_trees = util.load_trees("sample_trees.json")
+    return trees, original_trees
