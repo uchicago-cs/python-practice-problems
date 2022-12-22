@@ -82,3 +82,14 @@ def check_array_equal(actual, expected, recreate_msg):
         msg += "\n" + recreate_msg
     
     np.testing.assert_allclose(actual, expected, err_msg = msg, verbose=False)
+
+
+# Utils ported over for recursion problems
+def check_parameter_unmodified(actual, expected, param, recreate_msg=None):
+    msg = ("Parameter {} has been modified:\n"
+        "Actual ({}) and original ({}) values of {}" 
+        "do not match.").format(param, param, actual, expected)
+    if recreate_msg is not None:
+        msg += "\n" + recreate_msg
+
+    assert actual == expected, msg
