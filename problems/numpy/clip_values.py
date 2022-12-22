@@ -14,7 +14,14 @@ def clip_values(x, min_val=None, max_val=None):
 
     # YOUR CODE HERE
     # Replace None with an appropriate return value
-    return None
+    x_new = x.copy()
+    if min_val is not None:
+        x_new[x_new < min_val] = min_val
+        
+    if max_val is not None:
+        x_new[x_new > max_val] = max_val
+
+    return x_new
 
 
 #############################################################
@@ -36,7 +43,7 @@ def test_clip_values():
     x_orig = x.copy()
 
     ### Check for modification of input array
-    recreate_msg = utils.gen_recreate_msg('clip_values', min_val=1, max_val=1.8)
+    recreate_msg = utils.gen_recreate_msg('clip_values', 1, 1.8)
     
     result = clip_values(x, min_val=1, max_val=1.8)
     
@@ -47,7 +54,7 @@ def test_clip_values():
         "\n Input array was modified.\n\n" + recreate_msg
 
     ### Check minimum value
-    recreate_msg = utils.gen_recreate_msg('clip_values', min_val =1)
+    recreate_msg = utils.gen_recreate_msg('clip_values', 1)
 
     result = clip_values(x, min_val=1)
     
@@ -59,7 +66,7 @@ def test_clip_values():
         + recreate_msg
 
     ### Check maximum value
-    recreate_msg = utils.gen_recreate_msg('clip_values', max_val =1)
+    recreate_msg = utils.gen_recreate_msg('clip_values', None, 1)
 
     result = clip_values(x, max_val=1)
     
@@ -71,7 +78,7 @@ def test_clip_values():
         + recreate_msg
     
     ### Check Both
-    recreate_msg = utils.gen_recreate_msg('clip_values', min_val =1.0, max_val=1.5)
+    recreate_msg = utils.gen_recreate_msg('clip_values', 1.0, 1.5)
 
     result = clip_values(x, min_val=1.0, max_val=1.5)
     
