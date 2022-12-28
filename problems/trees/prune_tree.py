@@ -1,12 +1,15 @@
-def prune_tree(tree, keys_to_prune):
+from tree import Tree
+
+def prune_tree(tree, keys_to_discard):
     '''
     Returns a new tree with that is identical to the original tree, except
-    that any node whose key is in keys_to_prune is removed, along with its
-    descendants. If the key of the root is in keys_to_prune, then
-    YOUR TEXT HERE
+    that any node whose key is in keys_to_discard is removed, along with its
+    descendants. If the key of the root is in keys_to_discard, then
+    <replace this with a description of how your code behaves in this case>
+
     Inputs:
         tree: a Tree instance.
-        keys_to_prune: set of keys.
+        keys_to_discard: set of keys.
     
     Returns: (Tree) the pruned tree.
     '''
@@ -24,21 +27,21 @@ def prune_tree(tree, keys_to_prune):
 import sys
 import pytest
 import util
-from tree import Tree
 sys.path.append('../')
 
 import test_utils as utils
+import tree_test_utils as tree_utils
 
 def do_test_prune_tree(trees_original_expected, tree_name, keys_to_prune):
     trees, original_trees, expected_trees = trees_original_expected
-    recreate_msg = utils.gen_recreate_msg_with_trees('prune_tree', 
+    recreate_msg = tree_utils.gen_recreate_msg_with_trees('prune_tree', 
                                                     tree_name, keys_to_prune)
     actual = prune_tree(trees[tree_name], keys_to_prune)
     utils.check_none(actual, recreate_msg)
     utils.check_type(actual, expected_trees[tree_name], recreate_msg)
-    utils.check_tree_equals(actual, expected_trees[tree_name], recreate_msg)
-    utils.check_tree_unmodified(trees[tree_name], original_trees[tree_name], 
-                                recreate_msg)
+    tree_utils.check_tree_equals(actual, expected_trees[tree_name], recreate_msg)
+    tree_utils.check_tree_unmodified(trees[tree_name], original_trees[tree_name], 
+                                     recreate_msg)
 
 
 def test_prune_tree_1(trees_prune_tree):

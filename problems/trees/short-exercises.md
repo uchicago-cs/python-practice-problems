@@ -1,8 +1,8 @@
 # Short Exercises: Trees
 
-## Recursion with trees
+The following exercises depend on a `Tree` class which you can find in the [tree.py](tree.py) file.
 
-### Exercise #1
+## Exercise #1
 
 **File**: [min_depth_leaf.py](min_depth_leaf.py)
 
@@ -24,7 +24,7 @@ A: 20
         └──E: 60
 ```
 
-### Exercise #2
+## Exercise #2
 
 **File**: [prune_tree.py](prune_tree.py)
 

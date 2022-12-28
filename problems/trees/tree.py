@@ -2,26 +2,6 @@
 
 
 import textwrap
-import sys
-
-
-# This will try to import the necessary libraries
-# to plot trees. These can be complicated to install
-# so, if they are not available, we simply prevent
-# the plotting function from working.
-try:
-    import matplotlib
-    import matplotlib.pylab as plt
-    import networkx as nx
-    import pygraphviz
-    import matplotlib
-    import warnings
-    warnings.simplefilter(action = "ignore", category = FutureWarning)
-    warnings.simplefilter(action = "ignore", 
-        category = matplotlib.MatplotlibDeprecationWarning)
-    CAN_PLOT=True
-except ImportError as ie:
-    CAN_PLOT=False    
 
 
 class Tree(object):
@@ -126,49 +106,3 @@ class Tree(object):
         """
         
         self.__print_r(u"", False, kformat, vformat, maxdepth)
-
-
-    def __plot_r(self, g, labels, parent_id):
-        tree_id = id(self)
-
-        g.add_node(tree_id)
-        labels[tree_id] = self.key
-
-        if parent_id is not None:
-            g.add_edge(parent_id, tree_id)
-        
-        for st in self.children:
-            st.__plot_r(g, labels, tree_id)    
-    
-
-    def plot(self):
-        if not CAN_PLOT:
-            print("Error: Cannot plot the tree. " \
-                "networkx and/or pypgraphviz are not installed")
-            return
-
-        G = nx.DiGraph()
-        labels = {}
-
-        self.__plot_r(G, labels, None)
-
-        node_pos = nx.nx_pydot.pydot_layout(G, prog='dot')
-
-        nx.draw(G, node_pos, arrows=False, with_labels=False)
-        nx.draw_networkx_labels(G, node_pos, labels)
-        plt.show()
-
-
-if __name__ == "__main__":
-    t = Tree("ROOT", "foo")
-
-    for i in range(5):
-        st = Tree("CHILD %i" % (i+1), "foo")
-        t.add_child(st)
-
-    for st in t.children:
-        for i in range(2):
-            sst = Tree("GRANDCHILD %i" % (i+1), "foo")
-            st.add_child(sst)
-
-    t.print()

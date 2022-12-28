@@ -1,3 +1,5 @@
+from tree import Tree
+
 def min_depth_leaf(tree):
     """
     Computes the minimum depth of a leaf in the tree (length of shortest
@@ -19,21 +21,22 @@ def min_depth_leaf(tree):
 #############################################################
 
 import sys
-from tree import Tree
 import pytest
 import util
 sys.path.append('../')
 
 import test_utils as utils
+import tree_test_utils as tree_utils
+
 
 def do_test_min_depth_leaf(trees_and_original_trees, tree_name, expected):
     trees, original_trees = trees_and_original_trees
-    recreate_msg = utils.gen_recreate_msg_with_trees('min_depth_leaf', tree_name)
+    recreate_msg = tree_utils.gen_recreate_msg_with_trees('min_depth_leaf', tree_name)
     actual = min_depth_leaf(trees[tree_name])
     utils.check_none(actual, recreate_msg)
     utils.check_type(actual, expected, recreate_msg)
     utils.check_equals(actual, expected, recreate_msg)
-    utils.check_tree_unmodified(trees[tree_name], original_trees[tree_name], 
+    tree_utils.check_tree_unmodified(trees[tree_name], original_trees[tree_name], 
                                 recreate_msg)
 
 
