@@ -8,7 +8,7 @@ import sys
 import os
 
 
-def part1(jolts):
+def part1(monkeys):
     """
     Solves Part 1 (see problem statement for more details)
 
@@ -30,7 +30,7 @@ def part1(jolts):
     return None
 
 
-def part2(numbers):
+def part2(monkeys):
     """
     Solves Part 2 (see problem statement for more details)
 
