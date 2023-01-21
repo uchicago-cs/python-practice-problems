@@ -31,7 +31,7 @@ You can find instructions on how to test your solutions to these problems in the
 
 To work through the problems in this repository, we suggest you first create a *fork* of this repository. This will create a copy (or "fork") of this repository under your personal GitHub account, which will allow you to push your solutions to your fork.
 
-To create a fork, make sure you are in the repository's root on GitHub (https://github.com/uchicago-cs/python-practice-problems) and then click on the "Fork" button on the top-left. This wil take you to a page with a number of options; leave everyting as-is and click "Create fork". You can see more detailed instructions on GitHub's [Fork a repo](https://docs.github.com/en/get-started/quickstart/fork-a-repo) documentation.
+To create a fork, make sure you are in the repository's root on GitHub (https://github.com/uchicago-cs/python-practice-problems) and then click on the "Fork" button on the top-right. This wil take you to a page with a number of options; leave everyting as-is and click "Create fork". You can see more detailed instructions on GitHub's [Fork a repo](https://docs.github.com/en/get-started/quickstart/fork-a-repo) documentation.
 
 Once you have created your fork of the repository, you can commit and push code to that repository (we suggest you edit the starter code we provide directly, as that will ensure that any automated tests work correctly). Please note that, since these practice problems are not graded, you are welcome to make your forked repository public, and to share and discuss solutions with other students. You can also use it as a portfolio of code you've written, which can be shared with prospective employers.
 
