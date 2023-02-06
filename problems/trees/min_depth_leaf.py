@@ -1,4 +1,5 @@
 from tree import Tree
+import math
 
 def min_depth_leaf(tree):
     """
@@ -10,8 +11,12 @@ def min_depth_leaf(tree):
     Returns: (integer) the minimum depth of of a leaf in the tree.
     """
 
-    pass
-
+    if tree.children == None or tree.children == []:
+        return 0
+    min = math.inf
+    for child in tree.children:
+        min = 1 + min(min, min_depth_leaf(child))
+    return min
 
 #############################################################
 ###                                                       ###
