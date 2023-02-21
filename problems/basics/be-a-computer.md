@@ -60,3 +60,216 @@ What is the output of the following code?
     print("Result:")
     F1(1, 1)
     print()
+
+## Exercise #5
+
+Consider the following function definitions:
+
+    def a(x, y):
+        print("a0", x, y)
+        w = b(y)
+        print("w", w)
+        w = b(x) - w
+        print("w", w)
+        print("a1", x, y)
+
+
+    def b(x):
+        print("b0", x)
+        x = c(x) + 10
+        print("b1", x)
+        return x
+
+
+    def c(z):
+        print("c0", z)
+        if z % 2 == 0:
+            return z // 2
+        else:
+            return 3 * z + 1
+        print("c1", z)
+
+What is the output of running the following code? Be sure to include what is printed out by all `print` statements.
+
+    a(5, 8)
+
+## Exercise #6
+
+Consider the following code:
+
+    d = {"Alice": [0],
+        "Bob": [4, 2],
+        "Charlie": [0],
+        "Foods": ["apple", "banana",
+                "carrot", "olive",
+                "pear", "raspberry"]}
+
+
+    def f(x):
+        lst = d.get(x, [3])
+        print("x", x)
+        for i in lst:
+            print(i, d["Foods"][i])
+            del d["Foods"][i]
+
+
+    f("Bob")
+    f("Denny")
+    f("Alice")
+    f("Charlie")
+    print(d["Foods"])
+
+What is the output of running this code? Be sure to include what is printed out by all `print` statements.
+
+## Exercise #7
+
+Given the following class definition:
+
+    class Mystery(object):
+        def __init__(self, a, b):
+            self.a = a
+            self.b = b
+            self.c = 0
+            self.d = []
+
+
+        def one(self, a, b):
+            x = self.a + self.b
+            self.a = a
+            self.b = b
+            self.c += 1
+            return x + self.c
+
+
+        def two(self, q):
+            self.d.append(q)
+            return len(self.d)
+
+
+        def three(self):
+            return sum(self.d)
+
+What is the output of running the following code? Be sure to include what is printed out by all `print` statements.
+
+    m_A = Mystery(3, 5)
+    m_B = Mystery(100, 200)
+
+    print(m_A.one(10, 7))
+    print(m_A.one(2, 3))
+    print(m_B.one(1, 6))
+
+    print(m_B.two(10))
+    print(m_B.two(20))
+
+    print(m_A.three())
+    print(m_B.three())
+
+## Exercise #8
+
+Consider the following code:
+
+    class MysteryA(object):
+        def __init__(self, a, b):
+            self.a = (a, b)
+
+
+        def one(self):
+            self.a = (self.a[0] + 1, self.a[1])
+
+
+        def __str__(self):
+            return str(self.a)
+
+
+    class MysteryB(object):
+        def __init__(self, a, b):
+            self.a = a
+            self.b = b
+            self.c = []
+
+
+        def one(self, c):
+            for i in range(c):
+                d = MysteryA(self.a, self.b + i)
+                self.c.append(d)
+
+
+        def two(self):
+            for f in self.c:
+                print(f)
+
+
+        def three(self, c, d):
+            self.c[d].one()
+
+    x = MysteryB(1, 2)
+    y = MysteryB(3, 4)
+
+    x.one(2)
+    x.two()
+    x.three(3, 1)
+
+    y.one(3)
+    y.two()
+    y.three(3, 2)
+
+    x.two()
+    y.two()
+
+    x.one(2)
+
+What is the output of running this code? Be sure to include what is printed out by all `print` statements.
+
+## Exercise #9
+
+What is the output of the following code?
+
+    def mystery(x):
+        if x == 1:
+            return [1]
+        else:
+            output = [1]
+            prev = mystery(x - 1)
+            for i in range(1, len(prev)):
+                output.append(prev[i - 1] + prev[i])
+            output.append(1)
+        return output
+
+    for i in range(1,6):
+        print(mystery(i))
+
+## Exercise #10
+
+What is the output of running the following code? Be sure to include what is printed out by all `print` statements.
+
+    def r(n):
+        if n % 2 == 1:
+            return 0
+        else:
+            return 1 + r(n // 2)
+            
+    print(r(20))
+    print(r(21))
+    print(r(24))
+
+## Exercise #11
+
+Consider the following code:
+
+    def mystery(l):
+        n = len(l)
+        if n == 0:
+            return []
+
+        middle = n // 2
+        front = mystery(l[:middle])
+        back = mystery(l[middle+1:])
+        if n % 2 == 1:
+            return front + [l[middle]] + back
+        else:
+            return front + back
+            
+    print(mystery([11, 12, 13, 14, 15]))
+    print(mystery([11, 12, 13, 14, 15, 16]))
+
+What is the output of running this code? Be sure to include what is printed out by all `print` statements.
